@@ -95,10 +95,11 @@ class AutoDownloadIpaybank:
 
         print('login success..')
         card_div = '//*[@id="app"]/div[2]/div[1]/div/div[3]/div/div[2]'#click query button
-        signed = WebDriverWait(self.driver, 500000000).until(
-            EC.visibility_of_element_located((By.XPATH, card_div))
-        )
-        ActionChains(self.driver).click(signed).perform()
+        # signed = WebDriverWait(self.driver, 500000000).until(
+        #     EC.visibility_of_element_located((By.XPATH, card_div))
+        # )
+        # ActionChains(self.driver).click(signed).perform()
+        self.clickElement(card_div)
         print('card clicked')
         time.sleep(2)
         page = '//*[@id="app"]/div[2]/div[1]/div/div[3]/div[3]/div[3]/div/div[1]/div[1]'
